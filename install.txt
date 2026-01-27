@@ -1,0 +1,155 @@
+═══════════════════════════════════════════════════════════
+  THEZERO - PROFESSIONAL PENETRATION TESTING SUITE v2.0
+  Installation Instructions for Kali Linux
+═══════════════════════════════════════════════════════════
+
+QUICK INSTALL (Recommended)
+═══════════════════════════════════════════════════════════
+
+1. Navigate to TheZero directory:
+   cd TheZero
+
+2. Make setup script executable:
+   chmod +x Setup.sh
+
+3. Run setup:
+   ./Setup.sh
+
+4. Wait for installation to complete (2-3 minutes)
+
+5. Launch TheZero:
+   ./thezero.py
+
+
+MANUAL INSTALLATION
+═══════════════════════════════════════════════════════════
+
+1. Install system dependencies:
+   sudo apt-get update
+   sudo apt-get install -y python3 python3-pip python3-venv \
+       python3-dev build-essential libjpeg-dev zlib1g-dev
+
+2. Create virtual environment:
+   python3 -m venv venv
+
+3. Activate virtual environment:
+   source venv/bin/activate
+
+4. Install Python packages:
+   pip install --upgrade pip
+   pip install -r SpecterVision/requirements.txt
+   pip install requests beautifulsoup4 phonenumbers lxml
+
+5. Set permissions:
+   chmod +x thezero.py setup.sh
+
+6. Create directories:
+   mkdir -p SpecterVision/captures SpecterVision/logs
+   mkdir -p SocialEng/targets SocialEng/modules
+
+7. Run TheZero:
+   ./thezero.py
+
+
+SYSTEM REQUIREMENTS
+═══════════════════════════════════════════════════════════
+
+Operating System: Kali Linux 2023.x or later
+Python: 3.8+
+RAM: 2GB minimum (4GB recommended)
+Storage: 500MB free space
+Internet: Required for ngrok and TensorFlow.js
+
+
+VERIFICATION
+═══════════════════════════════════════════════════════════
+
+After installation, verify everything works:
+
+1. Launch TheZero:
+   ./thezero.py
+
+2. You should see the main menu with 4 options
+
+3. Test each sub-tool:
+   - Option 1: Crypto & Port Scanner Suite
+   - Option 2: SpecterVision Surveillance
+   - Option 3: Social Engineering Framework (NEW)
+
+
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════
+
+Problem: Setup.sh permission denied
+Solution: chmod +x Setup.sh
+
+Problem: Python3 not found
+Solution: sudo apt-get install python3 python3-pip python3-venv
+
+Problem: Virtual environment fails
+Solution:
+  rm -rf venv
+  python3 -m venv venv
+  source venv/bin/activate
+
+Problem: Dependencies fail to install
+Solution:
+  sudo apt-get install python3-dev build-essential
+  pip install --upgrade pip
+  ./Setup.sh
+
+Problem: Port 5000 already in use (SpecterVision)
+Solution: sudo lsof -ti:5000 | xargs kill -9
+
+
+GETTING STARTED
+═══════════════════════════════════════════════════════════
+
+After successful installation:
+
+1. Read the documentation:
+   - README.md (Full documentation)
+   - QUICKSTART.md (Quick reference)
+
+2. Launch TheZero:
+   ./thezero.py
+
+3. Explore the menu:
+   - Press [1] for Crypto & Port Scanner
+   - Press [2] for SpecterVision
+   - Press [3] for Social Engineering (NEW)
+   - Press [4] for Documentation
+   - Press [0] to Exit
+
+
+IMPORTANT NOTES
+═══════════════════════════════════════════════════════════
+
+1. thezero.py automatically activates the virtual environment
+
+2. Use Ctrl+C in sub-tools to return to main menu
+
+3. Obtain proper authorization before scanning networks
+
+4. Grant camera permissions when using SpecterVision
+
+5. All captures saved to: SpecterVision/captures/
+
+6. Target data saved to: SocialEng/targets/
+
+
+SUPPORT
+═══════════════════════════════════════════════════════════
+
+For help and documentation:
+- Use option [4] in main menu
+- Read README.md for detailed information
+- Check QUICKSTART.md for common tasks
+
+
+═══════════════════════════════════════════════════════════
+Developer: b1l4l-sec
+GitHub: https://github.com/b1l4l-sec
+Version: 2.0
+License: Educational Use Only
+═══════════════════════════════════════════════════════════

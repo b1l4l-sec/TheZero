@@ -1,0 +1,96 @@
+═══════════════════════════════════════════════════════════
+  THEZERO - RECENT CHANGES
+═══════════════════════════════════════════════════════════
+
+UPDATES APPLIED
+───────────────────────────────────────────────────────────
+
+1. REMOVED StartUp.sh
+   - No longer needed
+   - thezero.py now handles everything
+
+2. UPDATED thezero.py
+   ✓ Added automatic virtual environment detection
+   ✓ Auto-activates venv if not already active
+   ✓ Uses venv Python for all subprocess calls
+   ✓ Improved Ctrl+C handling in sub-tools
+   ✓ Pressing Ctrl+C in sub-tools returns to main menu
+   ✓ Only exits when Ctrl+C pressed in main menu
+
+3. UPDATED DOCUMENTATION
+   ✓ readme.md - Updated launch instructions
+   ✓ quickstart.md - Updated all references
+   ✓ install.txt - Updated installation guide
+   ✓ setup.sh - Updated completion message
+
+═══════════════════════════════════════════════════════════
+  HOW TO USE
+═══════════════════════════════════════════════════════════
+
+INSTALLATION (First Time)
+───────────────────────────────────────────────────────────
+cd TheZero
+chmod +x setup.sh thezero.py
+./setup.sh
+
+LAUNCHING THEZERO
+───────────────────────────────────────────────────────────
+./thezero.py
+
+Or:
+python3 thezero.py
+
+Note: Virtual environment activates automatically
+
+CTRL+C BEHAVIOR
+───────────────────────────────────────────────────────────
+✓ In Main Menu: Exits TheZero completely
+✓ In Sub-Tool: Returns to main menu
+✓ In Documentation: Returns to main menu
+✓ No more complete shutdowns from sub-tools
+
+WORKFLOW EXAMPLE
+───────────────────────────────────────────────────────────
+1. ./thezero.py
+2. Select [1] - Crypto Suite
+3. Port scanner starts
+4. Press Ctrl+C → Returns to main menu
+5. Select [2] - SpecterVision
+6. Press Ctrl+C → Returns to main menu
+7. Select [0] → Exits completely
+
+═══════════════════════════════════════════════════════════
+  TECHNICAL DETAILS
+═══════════════════════════════════════════════════════════
+
+Virtual Environment Activation:
+- check_and_activate_venv() function added
+- Detects if running in venv (sys.prefix vs sys.base_prefix)
+- If not in venv, uses os.execv() to restart with venv Python
+- All subprocess calls now use venv Python interpreter
+
+Keyboard Interrupt Handling:
+- launch_crypto_suite() - try/except KeyboardInterrupt
+- launch_spectervision() - try/except KeyboardInterrupt
+- Documentation menu - nested try/except
+- Main menu - only place where Ctrl+C exits
+
+File Changes:
+REMOVED:
+  - startup.sh
+
+MODIFIED:
+  - thezero.py
+  - setup.sh
+  - readme.md
+  - quickstart.md
+  - install.txt
+
+ADDED:
+  - CHANGES.txt (this file)
+
+═══════════════════════════════════════════════════════════
+Version: 1.1
+Developer: LB Programming
+Updated: 2026-01-19
+═══════════════════════════════════════════════════════════

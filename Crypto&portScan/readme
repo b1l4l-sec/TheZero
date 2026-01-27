@@ -1,0 +1,16 @@
+🚀 TheZero – From Zero to Hero! 🛡️
+TheZero is a powerful cybersecurity tool built for ethical hacking and security analysis. Designed to be intuitive and effective, it includes multiple modules to assist with scanning, encryption, and more.
+
+🔥 Features:
+🛠️ Port Scanner – Scan open ports and analyze network security.
+🔐 Cryptography x64 – Encode & decode Base64 and Base32 with ease.
+🎨 Interactive UI – Stylish terminal interface with color-coded output.
+🛑 Keyboard Interrupt Handling – Graceful exit with a friendly message.
+📌 Usage:
+1️⃣ Run thezero.py and select an option.
+2️⃣ Perform port scanning or encryption tasks.
+3️⃣ Exit safely with a cool farewell message!
+
+👨‍💻 Tech Stack: Python 🐍 | Kali Linux 🐧 | Ethical Hacking 🏴‍☠️
+
+🔗 Motto: "Every master was once a beginner. Every hero was once a zero." 🚀

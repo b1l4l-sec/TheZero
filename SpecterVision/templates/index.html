@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpecterVision - Biometric Surveillance System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>SpecterVision</h1>
+            <p>Biometric Surveillance & Security Research Platform</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="video-section">
+                <div class="video-container">
+                    <canvas id="videoCanvas"></canvas>
+                    <div class="fps-counter" id="fpsCounter">0 FPS</div>
+                    <div class="status-overlay" id="statusOverlay">
+                        <div class="status-message">Camera Inactive</div>
+                    </div>
+                </div>
+                <div class="video-controls">
+                    <button id="initCameraBtn" class="btn btn-primary">Initialize Camera</button>
+                    <button id="stopCameraBtn" class="btn btn-danger" style="display: none;">Stop Camera</button>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h2>Session Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Session ID:</span>
+                            <span class="info-value" id="sessionId">Not Started</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Current Mode:</span>
+                            <span class="info-value" id="currentMode">None</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status:</span>
+                            <span class="info-value status-inactive" id="statusIndicator">Inactive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h2>Detection Modes</h2>
+                    <div class="mode-buttons">
+                        <button id="emotionBtn" class="btn btn-secondary" disabled>
+                            <span class="btn-icon">👤</span>
+                            <span>Emotion Detection</span>
+                        </button>
+                        <button id="motionBtn" class="btn btn-secondary" disabled>
+                            <span class="btn-icon">🔍</span>
+                            <span>Motion Detection</span>
+                        </button>
+                    </div>
+                    <p class="mode-description">Detection modes available after camera initialization</p>
+                </div>
+
+                <div class="panel-section">
+                    <h2>Live Detection Results</h2>
+                    <div id="detectionResults" class="detection-results">
+                        <p class="results-placeholder">Select a detection mode to see live results</p>
+                        <div id="emotionResults" class="emotion-results" style="display: none;">
+                            <div class="result-item">
+                                <span class="result-label">Detected Emotion:</span>
+                                <span class="result-value" id="detectedEmotion">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Confidence:</span>
+                                <span class="result-value" id="emotionConfidence">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Faces Detected:</span>
+                                <span class="result-value" id="faceCount">0</span>
+                            </div>
+                        </div>
+                        <div id="motionResults" class="motion-results" style="display: none;">
+                            <div class="result-item">
+                                <span class="result-label">Motion Detected:</span>
+                                <span class="result-value" id="motionStatus">No</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Motion Percentage:</span>
+                                <span class="result-value" id="motionPercentage">0%</span>
+                            </div>
+                            <div class="motion-bar-container">
+                                <div id="motionBar" class="motion-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection"></script>
+    <script src="/static/js/camera.js"></script>
+    <script src="/static/js/capture.js"></script>
+    <script src="/static/js/emotion.js"></script>
+    <script src="/static/js/motion.js"></script>
+</body>
+</html>
