@@ -22,11 +22,11 @@
 
 ### Sub Tools Gallery
 
-| Social Engineering Tool | Crypto & Port Scanner | Target Profiler |
-|------------------------|----------------------|-----------------|
+|  Crypto & Port Scanner |     SpecterVision    | Social Engineering |
+|------------------------|----------------------|--------------------|
 | ![SocialEng](TheZeroSubTool1.png) | ![Crypto & Port Scan](TheZeroSubTool2.png) | ![Target Profiler](TheZeroSubTool3.png) |
 
-| Email Harvester | Phone Validator | Social Media Enum | Other Tools |
+|   MASTER Lock   |      HackWIN    |        DoDOS      |  PasswdMGR |
 |-----------------|-----------------|-------------------|------------|
 | ![Email Harvester](TheZeroSubTool4.png) | ![Phone Validator](TheZeroSubTool5.png) | ![Social Enum](TheZeroSubTool6.png) | ![Extra Tool](TheZeroSubTool7.png) |
 
